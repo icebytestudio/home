@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICEBYTESTUDIO - Videojuego</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #1e293b 100%);
+        }
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        .screenshot {
+            transition: all 0.3s ease;
+        }
+        .screenshot:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <!-- Header -->
+    <header class="gradient-bg py-6 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center">
+                    <i class="fas fa-snowflake text-white text-xl"></i>
+                </div>
+                <h1 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                    ICEBYTESTUDIO
+                </h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#game" class="text-cyan-300 hover:text-white transition">El Juego</a>
+                <a href="#gallery" class="text-cyan-300 hover:text-white transition">Galería</a>
+                <a href="#features" class="text-cyan-300 hover:text-white transition">Características</a>
+                <a href="#download" class="bg-cyan-600 hover:bg-cyan-500 px-4 py-2 rounded-full transition">Descargar</a>
+            </nav>
+            <button class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden gradient-bg">
+        <div class="container mx-auto px-4 py-20 md:py-32 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    Vive la <span class="text-cyan-400">aventura</span> definitiva
+                </h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-lg">
+                    Sumérgete en un mundo de acción y misterio con nuestro último lanzamiento. Disponible ahora en todas las plataformas.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#download" class="bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-4 rounded-full text-lg font-semibold transition">
+                        Comprar ahora
+                    </a>
+                    <a href="#trailer" class="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition">
+                        Ver trailer
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="floating">
+                    <img src="https://via.placeholder.com/600x400/06b6d4/ffffff?text=Game+Character" alt="Personaje del juego" class="w-full max-w-md mx-auto rounded-xl shadow-2xl">
+                </div>
+                <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-cyan-500 rounded-full opacity-20"></div>
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-500 rounded-full opacity-20"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Info Section -->
+    <section id="game" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Sobre el juego</h2>
+                <div class="w-20 h-1 bg-cyan-500 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://via.placeholder.com/600x400/1e293b/ffffff?text=Gameplay" alt="Gameplay" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6 text-cyan-400">Una aventura épica te espera</h3>
+                    <p class="text-gray-300 mb-6">
+                        Embárcate en un viaje a través de mundos desconocidos llenos de peligros y maravillas. Nuestro juego combina una narrativa profunda con un gameplay innovador.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                            </div>
+                            <p class="ml-3 text-gray-300">
+                                <span class="font-semibold">Más de 20 horas de contenido</span> - Una experiencia completa con múltiples finales.
+                            </p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                            </div>
+                            <p class="ml-3 text-gray-300">
+                                <span class="font-semibold">Sistema de combate único</span> - Combina habilidades para crear tus propios estilos de lucha.
+                            </p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                            </div>
+                            <p class="ml-3 text-gray-300">
+                                <span class="font-semibold">Mundo abierto detallado</span> - Explora cada rincón y descubre secretos ocultos.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Galería 3D</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Explora los impresionantes entornos y personajes de nuestro juego</p>
+                <div class="w-20 h-1 bg-cyan-500 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Gallery Item 1 -->
+                <div class="relative group overflow-hidden rounded-xl screenshot">
+                    <img src="https://via.placeholder.com/600x400/06b6d4/ffffff?text=Escena+1" alt="Escena del juego" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <button class="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-2 rounded-full flex items-center">
+                            <i class="fas fa-expand mr-2"></i> Ampliar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="relative group overflow-hidden rounded-xl screenshot">
+                    <img src="https://via.placeholder.com/600x400/1e293b/ffffff?text=Escena+2" alt="Escena del juego" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <button class="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-2 rounded-full flex items-center">
+                            <i class="fas fa-expand mr-2"></i> Ampliar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="relative group overflow-hidden rounded-xl screenshot">
+                    <img src="https://via.placeholder.com/600x400/3b82f6/ffffff?text=Escena+3" alt="Escena del juego" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <button class="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-2 rounded-full flex items-center">
+                            <i class="fas fa-expand mr-2"></i> Ampliar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="relative group overflow-hidden rounded-xl screenshot">
+                    <img src="https://via.placeholder.com/600x400/06b6d4/ffffff?text=Escena+4" alt="Escena del juego" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <button class="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-2 rounded-full flex items-center">
+                            <i class="fas fa-expand mr-2"></i> Ampliar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="relative group overflow-hidden rounded-xl screenshot">
+                    <img src="https://via.placeholder.com/600x400/1e293b/ffffff?text=Escena+5" alt="Escena del juego" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <button class="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-2 rounded-full flex items-center">
+                            <i class="fas fa-expand mr-2"></i> Ampliar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="relative group overflow-hidden rounded-xl screenshot">
+                    <img src="https://via.placeholder.com/600x400/3b82f6/ffffff?text=Escena+6" alt="Escena del juego" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <button class="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-2 rounded-full flex items-center">
+                            <i class="fas fa-expand mr-2"></i> Ampliar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-gray-900 px-8 py-3 rounded-full font-semibold transition">
+                    Ver más imágenes
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Características principales</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Descubre lo que hace único a nuestro juego</p>
+                <div class="w-20 h-1 bg-cyan-500 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-700 p-8 rounded-xl hover:bg-gray-600 transition game-card">
+                    <div class="w-16 h-16 bg-cyan-500 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Mundo expansivo</h3>
+                    <p class="text-gray-300">
+                        Explora un vasto mundo lleno de ciudades vibrantes, peligrosas mazmorras y paisajes impresionantes.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-gray-700 p-8 rounded-xl hover:bg-gray-600 transition game-card">
+                    <div class="w-16 h-16 bg-cyan-500 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Personajes memorables</h3>
+                    <p class="text-gray-300">
+                        Conoce a un elenco de personajes únicos, cada uno con su propia historia y personalidad.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-gray-700 p-8 rounded-xl hover:bg-gray-600 transition game-card">
+                    <div class="w-16 h-16 bg-cyan-500 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-swords text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sistema de combate profundo</h3>
+                    <p class="text-gray-300">
+                        Combina armas, habilidades y magia para crear tu propio estilo de combate.
+                    </p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-gray-700 p-8 rounded-xl hover:bg-gray-600 transition game-card">
+                    <div class="w-16 h-16 bg-cyan-500 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-music text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Banda sonora épica</h3>
+                    <p class="text-gray-300">
+                        Disfruta de una banda sonora original compuesta por orquesta que se adapta a cada situación.
+                    </p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-gray-700 p-8 rounded-xl hover:bg-gray-600 transition game-card">
+                    <div class="w-16 h-16 bg-cyan-500 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-puzzle-piece text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Rompecabezas desafiantes</h3>
+                    <p class="text-gray-300">
+                        Resuelve ingeniosos rompecabezas que pondrán a prueba tu ingenio y percepción.
+                    </p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-gray-700 p-8 rounded-xl hover:bg-gray-600 transition game-card">
+                    <div class="w-16 h-16 bg-cyan-500 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-trophy text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Logros y coleccionables</h3>
+                    <p class="text-gray-300">
+                        Completa desafíos, encuentra objetos ocultos y desbloquea recompensas exclusivas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-10 bg-gradient-to-br from-cyan-600 to-blue-700 flex flex-col justify-center">
+                        <h2 class="text-3xl font-bold mb-4">Descarga ahora</h2>
+                        <p class="text-gray-200 mb-6">
+                            Disponible en todas las plataformas principales. Elige tu favorita y comienza la aventura.
+                        </p>
+                        <div class="flex space-x-4">
+                            <div class="bg-black bg-opacity-30 rounded-lg p-3 flex items-center">
+                                <i class="fab fa-windows text-2xl mr-2"></i>
+                                <span>Windows</span>
+                            </div>
+                            <div class="bg-black bg-opacity-30 rounded-lg p-3 flex items-center">
+                                <i class="fab fa-playstation text-2xl mr-2"></i>
+                                <span>PS5</span>
+                            </div>
+                            <div class="bg-black bg-opacity-30 rounded-lg p-3 flex items-center">
+                                <i class="fab fa-xbox text-2xl mr-2"></i>
+                                <span>Xbox</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-10">
+                        <h3 class="text-2xl font-bold mb-6 text-center">Selecciona tu edición</h3>
+                        
+                        <!-- Standard Edition -->
+                        <div class="bg-gray-700 rounded-lg p-6 mb-4 border-2 border-gray-600 hover:border-cyan-500 transition">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h4 class="font-bold text-lg">Edición Estándar</h4>
+                                    <p class="text-gray-400 text-sm">Contenido base del juego</p>
+                                </div>
+                                <span class="text-2xl font-bold text-cyan-400">$29.99</span>
+                            </div>
+                            <ul class="text-gray-300 text-sm space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-cyan-500 mr-2"></i>
+                                    Juego completo
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-cyan-500 mr-2"></i>
+                                    Soporte técnico
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-cyan-500 mr-2"></i>
+                                    Actualizaciones gratuitas
+                                </li>
+                            </ul>
+                            <button class="w-full bg-cyan-600 hover:bg-cyan-500 text-white py-3 rounded-lg font-semibold transition">
+                                Comprar ahora
+                            </button>
+                        </div>
+                        
+                        <!-- Deluxe Edition -->
+                        <div class="bg-gray-700 rounded-lg p-6 border-2 border-cyan-500 relative">
+                            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-cyan-500 text-gray-900 px-3 py-1 rounded-full text-xs font-bold">
+                                MEJOR OFERTA
+                            </div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h4 class="font-bold text-lg">Edición Deluxe</h4>
+                                    <p class="text-gray-400 text-sm">Juego + Contenido adicional</p>
+                                </div>
+                                <span class="text-2xl font-bold text-cyan-400">$49.99</span>
+                            </div>
+                            <ul class="text-gray-300 text-sm space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-cyan-500 mr-2"></i>
+                                    Todo en Edición Estándar
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-cyan-500 mr-2"></i>
+                                    Pase de temporada
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-cyan-500 mr-2"></i>
+                                    Skin exclusiva
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-cyan-500 mr-2"></i>
+                                    Banda sonora digital
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-cyan-500 mr-2"></i>
+                                    Arte conceptual
+                                </li>
+                            </ul>
+                            <button class="w-full bg-cyan-600 hover:bg-cyan-500 text-white py-3 rounded-lg font-semibold transition">
+                                Comprar ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Mantente informado</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+                Suscríbete a nuestro boletín para recibir noticias sobre actualizaciones, nuevos lanzamientos y ofertas exclusivas.
+            </p>
+            <div class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Tu correo electrónico" class="flex-grow px-4 py-3 rounded-l-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                <button class="bg-cyan-600 hover:bg-cyan-500 px-6 py-3 rounded-r-lg font-semibold transition">
+                    Suscribirse
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-snowflake text-white text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                            ICEBYTESTUDIO
+                        </h2>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">
+                        Creando experiencias de juego inolvidables desde 2023.
+                    </p>
+                </div>
+                
+                <div class="flex space-x-6 mb-8 md:mb-0">
+                    <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-cyan-600 rounded-full flex items-center justify-center transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-pink-600 rounded-full flex items-center justify-center transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-cyan-400">Enlaces</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Inicio</a></li>
+                            <li><a href="#game" class="text-gray-400 hover:text-white transition">El Juego</a></li>
+                            <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Galería</a></li>
+                            <li><a href="#download" class="text-gray-400 hover:text-white transition">Comprar</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-cyan-400">Legal</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Términos</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Privacidad</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Cookies</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 ICEBYTESTUDIO. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Mobile menu toggle (would need more JS for full functionality)
+        document.querySelector('.md\\:hidden').addEventListener('click', function() {
+            alert('Menú móvil se abriría aquí en una implementación completa');
+        });
+        
+        // Gallery image click handler
+        document.querySelectorAll('.screenshot button').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Se abriría un modal con la imagen ampliada en una implementación completa');
+            });
+        });
+    </script>
+</body>
+</html>
